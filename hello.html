@@ -1,30 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Extensions</title>
+  <meta charset="UTF-8" />
+  <title>Product Catalog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Metadata often scraped -->
+  <meta name="description" content="A demo product catalog for scraping practice">
+  <meta name="author" content="Demo Corp">
+
+  <!-- Inline styles (sometimes relevant) -->
+  <style>
+    .hidden { display: none; }
+    .price[data-discount="true"] { color: red; }
+  </style>
 </head>
+
 <body>
-    <h1>Hello Extensions</h1>
-    <div class="test">
-        <p id="first-id-1">Yes1</p>
-    </div>
+  <header id="site-header">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/home" data-track="nav-home">Home</a></li>
+        <li><a href="/products" data-track="nav-products">Products</a></li>
+        <li><a href="/about" data-track="nav-about">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h2 class="required-id-2">Required2</h2>
+  <main id="content">
+    <section class="breadcrumbs">
+      <span><a href="/">Home</a></span> &gt;
+      <span><a href="/products">Products</a></span> &gt;
+      <span>Electronics</span>
+    </section>
 
-    <div class="test">
-        <p id="first-id-3">Yes3</p>
-    </div>
+    <section class="filters">
+      <form id="filter-form">
+        <label>
+          Category
+          <select name="category">
+            <option value="all">All</option>
+            <option value="phones">Phones</option>
+            <option value="laptops">Laptops</option>
+          </select>
+        </label>
 
-    <h2 class="required-id-4">Required4</h2>
+        <label>
+          In Stock
+          <input type="checkbox" name="in_stock" checked />
+        </label>
+      </form>
+    </section>
 
-    <div class="test">
-        <p id="first-id-5">Yes5</p>
-    </div>
+    <section class="product-list" data-page="1">
+      <!-- Product card -->
+      <article class="product-card" data-id="sku-1001">
+        <h2 class="product-name">Photon X Phone</h2>
 
-    <button id="helloButton">Say Hello</button>
-    <div id="container"></div>
-    <script src="script.js"></script>
+        <div class="product-meta">
+          <span class="brand">Photon</span>
+          <span class="rating" data-rating="4.6">
+            ★★★★☆
+          </span>
+        </div>
+
+        <div class="pricing">
+          <span class="price" data-currency="NZD" data-discount="true">
+            899.00
+          </span>
+          <span class="original-price hidden">
+            999.00
+          </span>
+        </div>
+
+        <ul class="specs">
+          <li data-key="storage">128GB</li>
+          <li data-key="color">Black</li>
+          <li data-key="battery">4500mAh</li>
+        </ul>
+
+        <button class="add-to-cart" data-action="add" data-sku="sku-1001">
+          Add to cart
+        </button>
+      </article>
+
+      <!-- Another product -->
+      <article class="product-card featured" data-id="sku-1002">
+        <h2 class="product-name">NebulaBook Pro</h2>
+
+        <div class="product-meta">
+          <span class="brand">Nebula</span>
+          <span class="rating" data-rating="4.9">
+            ★★★★★
+          </span>
+        </div>
+
+        <div class="pricing">
+          <span class="price" data-currency="NZD">
+            2199.00
+          </span>
+        </div>
+
+        <ul class="specs">
+          <li data-key="ram">32GB</li>
+          <li data-key="cpu">M3</li>
+          <li data-key="weight">1.4kg</li>
+        </ul>
+
+        <div class="availability" data-status="limited">
+          Only <span class="count">3</span> left in stock
+        </div>
+      </article>
+    </section>
+
+    <section class="pagination">
+      <a href="?page=1" class="page active">1</a>
+      <a href="?page=2" class="page">2</a>
+      <a href="?page=3" class="page">3</a>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <section class="legal">
+      <span>&copy; 2025 Demo Corp</span>
+      <a href="/privacy">Privacy Policy</a>
+    </section>
+
+    <!-- Data sometimes embedded like this -->
+    <script type="application/json" id="page-data">
+      {
+        "currency": "NZD",
+        "userLoggedIn": false,
+        "experimentGroup": "B"
+      }
+    </script>
+  </footer>
 </body>
 </html>
