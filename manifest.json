@@ -1,0 +1,10 @@
+{
+    "name": "Hello Extensions",
+    "description": "Base Level Extension of the world! It's a simple extension that says hello to the world. You can click the button to say hello to the world. ",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "hello.html",
+      "default_icon": "icon.png"
+    }
+  }
