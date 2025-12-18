@@ -1,0 +1,252 @@
+/* =========================
+   Base reset
+   ========================= */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f5f6f8;
+    color: #222;
+    line-height: 1.5;
+  }
+
+  /* =========================
+     Header & navigation
+     ========================= */
+  #site-header {
+    background: #111;
+    color: #fff;
+    padding: 1rem 2rem;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .main-nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .main-nav a:hover {
+    color: #fff;
+  }
+
+  /* =========================
+     Layout
+     ========================= */
+  #content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  /* =========================
+     Breadcrumbs
+     ========================= */
+  .breadcrumbs {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .breadcrumbs a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+
+  /* =========================
+     Filters
+     ========================= */
+  .filters form {
+    display: flex;
+    gap: 2rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  .filters label {
+    font-size: 0.9rem;
+    color: #444;
+  }
+
+  /* =========================
+     Product list
+     ========================= */
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* =========================
+     Product card
+     ========================= */
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    position: relative;
+  }
+
+  .product-card.featured {
+    border: 2px solid #ffb703;
+  }
+
+  /* =========================
+     Product text
+     ========================= */
+  .product-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+  }
+
+  .rating {
+    color: #f4a261;
+  }
+
+  /* =========================
+     Pricing
+     ========================= */
+  .pricing {
+    margin-bottom: 0.75rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .price[data-discount="true"] {
+    color: #d62828;
+  }
+
+  .original-price {
+    font-size: 0.9rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+  }
+
+  /* =========================
+     Specs
+     ========================= */
+  .specs {
+    list-style: none;
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  .specs li {
+    padding: 0.25rem 0;
+  }
+
+  /* =========================
+     Availability
+     ========================= */
+  .availability {
+    font-size: 0.85rem;
+    color: #b45309;
+  }
+
+  .availability[data-status="limited"] {
+    font-weight: 600;
+  }
+
+  /* =========================
+     Buttons
+     ========================= */
+  .add-to-cart {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background: #0077cc;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  .add-to-cart:hover {
+    background: #005fa3;
+  }
+
+  /* =========================
+     Pagination
+     ========================= */
+  .pagination {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .page {
+    padding: 0.4rem 0.65rem;
+    border-radius: 4px;
+    background: #eee;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.85rem;
+  }
+
+  .page.active {
+    background: #0077cc;
+    color: #fff;
+  }
+
+  /* =========================
+     Footer
+     ========================= */
+  #site-footer {
+    background: #111;
+    color: #bbb;
+    padding: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  #site-footer a {
+    color: #bbb;
+    text-decoration: none;
+  }
+
+  /* =========================
+     Utility
+     ========================= */
+  .hidden {
+    display: none !important;
+  }
+
+  /* =========================
+     Responsive behavior
+     ========================= */
+  @media (max-width: 600px) {
+    .filters form {
+      flex-direction: column;
+    }
+
+    .product-meta {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
